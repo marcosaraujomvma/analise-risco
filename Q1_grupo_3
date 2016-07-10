@@ -1,0 +1,7 @@
+results <- list()
+for(i in 1:10) {
+    coinTosses <- cumsum(sample(c(1,0), 1000, replace = TRUE,prob = c(0.5,0.5)))
+    results[[i]] <- coinTosses[length(coinTosses)]
+}
+# Unlist the list and create a histogram. Set a title and set the color and breaks
+hist(unlist(results), main = "Frequência da Qtd de 'Cara' 1000 lançamentos",col = "lightblue", breaks = 10)
